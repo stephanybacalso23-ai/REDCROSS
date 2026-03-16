@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Cross Youth Club | Official Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+
+        body {
+            background-image: url('https://image2url.com/r2/default/images/1771572682181-4bf89357-6aba-412b-9557-bfac47dde8f7.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        .page-content { display: none; animation: fadeIn 0.4s ease-out; }
+        .page-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .text-rcy { color: #D31027; }
+        .bg-rcy { background-color: #D31027; }
+
+        .nav-link { 
+            position: relative; 
+            transition: all 0.3s ease; 
+            color: #4b5563; 
+            font-size: 13px; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .nav-link::after { 
+            content: ''; position: absolute; width: 0; height: 2px; 
+            bottom: -4px; left: 0; background-color: #D31027; 
+            transition: all 0.3s ease; 
+        }
+        .nav-link:hover::after, .nav-link.active-page::after { width: 100%; }
+        .nav-link.active-page { color: #000; }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(14px);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        @media (min-width: 768px) { .glass-card { padding: 3rem; } }
+
+        .content-container { padding-top: 4rem; padding-left: 1.5rem; padding-right: 1.5rem; }
+
+        .officer-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .officer-card:hover {
+            transform: translateY(-10px);
+            background: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal { 
+            display: none; position: fixed; inset: 0; 
+            background: rgba(15, 23, 42, 0.85); z-index: 100; 
+            justify-content: center; align-items: center; 
+            backdrop-filter: blur(10px);
+        }
+        .modal.active { display: flex; }
+    </style>
+</head>
+<body id="mainBody" class="min-h-screen">
+
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-24">
+            <div class="flex items-center space-x-3">
+                <div class="flex space-x-2">
+                    <img src="https://image2url.com/r2/default/images/1771571572708-bb0bafda-c790-4413-8dc4-3fb80a3f150d.jpg" alt="Logo 1" class="h-10 w-10 md:h-12 md:w-12">
+                    <img src="https://image2url.com/r2/default/images/1771414675300-9367d4d8-7097-46fc-877d-e7779d09b369.jpg" alt="Logo 2" class="h-10 w-10 md:h-12 md:w-12">
+                </div>
+                <div class="h-10 w-[1px] bg-gray-200 mx-1"></div>
+                <h1 class="font-extrabold text-gray-900 text-lg md:text-2xl uppercase tracking-tighter leading-[0.9] md:leading-[0.85]">
+                    Red Cross <br> <span class="text-rcy">Youth Club</span>
+                </h1>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <div class="hidden lg:flex space-x-6">
+                    <a onclick="showPage('home')" id="nav-home" class="nav-link active-page">Home</a>
+                    <a onclick="showPage('activities')" id="nav-activities" class="nav-link">Activities</a>
+                    <a onclick="showPage('about')" id="nav-about" class="nav-link">About Us</a>
+                    <a onclick="showPage('officers')" id="nav-officers" class="nav-link">Officers</a>
+                    <a onclick="showPage('feedback')" id="nav-feedback" class="nav-link">Feedback</a>
+                </div>
+                <button id="portalBtn" onclick="openModal()" class="px-5 py-2 bg-gray-900 text-white font-bold text-[10px] uppercase tracking-widest rounded-full hover:bg-rcy transition-all">
+                    Portal Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto pb-20">
+        <section id="page-home" class="page-content active content-container">
+            <div class="glass-card">
+                <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">Official Website</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Welcome to the <br>Red Cross Youth Club</h2>
+                <div class="h-1.5 w-16 bg-rcy mt-4 mb-8"></div>
+                <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-2xl">
+                    The heart of volunteerism. Join the Red Cross Youth Club in our mission to save lives and lead with compassion.
+                </p>
+            </div>
+        </section>
+
+        <section id="page-activities" class="page-content content-container">
+            <div class="glass-card">
+                <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">What We Do</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Activities</h2>
+                <div class="h-1.5 w-16 bg-rcy mt-4 mb-8"></div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Stay tuned for our upcoming blood drives, first-aid training sessions, and community outreach programs. 
+                </p>
+            </div>
+        </section>
+
+        <section id="page-about" class="page-content content-container">
+            <div class="glass-card">
+                <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">Our Purpose</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Mission & Vision</h2>
+                <div class="h-1.5 w-16 bg-rcy mt-4 mb-10"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="p-8 bg-white/60 border border-gray-100 rounded-2xl">
+                        <h3 class="text-[10px] font-black text-rcy uppercase tracking-[0.3em] mb-4">The Mission</h3>
+                        <p class="text-gray-700 text-base leading-relaxed font-medium">
+                            The Red Cross Youth Club will provide a sustained and effective humanitarian service committed to build resilient communities, ran by well-trained and dedicated staff and volunteers imbued with integrity, equipped with the necessary logistics and the maximum usage of information technology.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-gray-900 text-white rounded-2xl shadow-xl">
+                        <h3 class="text-[10px] font-black text-white/50 uppercase tracking-[0.3em] mb-4">The Vision</h3>
+                        <p class="text-gray-200 text-base leading-relaxed font-medium italic">
+                            To be the foremost humanitarian organization ready to meet the challenges and capable of rapid delivery of humanitarian services in order to prevent and alleviate human suffering and uplift the dignity of the most vulnerable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-officers" class="page-content content-container">
+            <div class="glass-card">
+                <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">Our Leaders</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Club Officers</h2>
+                <div class="h-1.5 w-16 bg-rcy mt-4 mb-12"></div>
+
+              
+
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557081148-3ce56fb0-06a5-4a65-b61a-e69ed1d7a598.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Adriel Singian</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">President</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640470631-cf900721-da87-4b19-9caf-96d83debd15e.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Colleen Patining</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Vice President</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771556813163-89051f32-6f06-42e9-a243-c5e9325a88da.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Nazarene Sumalinig</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">SECRETARY</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557019523-09e5961d-c1cb-4528-acf8-7e440375bfec.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jairus Dejoras</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Asst. Secretary</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557053931-59554595-6462-4bb2-bbda-f8fd7be671f4.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Tanya Villiamor</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Grade Rep</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557146596-0b7afa57-856e-461f-848b-32131bb339f2.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Princess Dino</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">PIO</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://i.imgur.com/OKQI5mH.jpeg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jhilianne T. Balanay</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Ass PIO</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640227940-a7ee8295-5652-41ab-bd2d-4d043b5ea1f8.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Fernando Wacal Jr.</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Auditor</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640377827-810807dd-9a4b-484c-8213-53dd45fcb862.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Eukan Christoff Tinio</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Asst. Treasurer</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557185239-755aefe4-bad1-4794-aba0-17d55dcd3789.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jacy Plaza</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640035612-72bf32a7-9666-4c9d-b546-1e1c8232b5a0.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Alex Garcia</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640434449-b94adc88-d195-43fc-9e6a-60ed58e2fd27.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Yanica Pamplona</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557117721-25b55d2c-09ee-44c4-a6a8-02cd9d829fed.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Amor Sulat</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-feedback" class="page-content content-container">
+            <div class="glass-card max-w-2xl mx-auto">
+                <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">Community Voice</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Feedback Form</h2>
+                <div class="h-1.5 w-16 bg-rcy mt-4 mb-8"></div>
+                
+                <div id="feedback-locked" class="text-center py-10">
+                    <div class="bg-gray-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-6">Please log in to your account to submit feedback.</p>
+                    <button onclick="openModal()" class="px-8 py-3 bg-rcy text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-gray-900 transition-all">
+                        Login to Access
+                    </button>
+                </div>
+
+                <form id="feedback-form" class="space-y-4 hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Full Name" class="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl outline-none focus:border-rcy">
+                        <input type="email" placeholder="Email Address" class="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl outline-none focus:border-rcy">
+                    </div>
+                    <select class="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl outline-none focus:border-rcy text-gray-500">
+                        <option>General Inquiry</option>
+                        <option>Suggestion</option>
+                        <option>Report an Issue</option>
+                        <option>Volunteer Interest</option>
+                    </select>
+                    <textarea placeholder="Your Message" rows="4" class="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl outline-none focus:border-rcy"></textarea>
+                    <button type="submit" class="w-full py-4 bg-gray-900 text-white font-black rounded-xl text-xs uppercase tracking-widest hover:bg-rcy transition-all">Submit Feedback</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <div id="authModal" class="modal" onclick="if(event.target == this) closeModal()">
+        <div class="bg-white p-10 max-w-sm w-full rounded-3xl shadow-2xl relative" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-6 text-2xl text-gray-300 hover:text-black transition-colors">×</button>
+            <div id="modal-content">
+                <h3 id="modal-title" class="font-black text-2xl text-gray-900 uppercase tracking-tighter mb-2 text-center">Portal Access</h3>
+                <p class="text-center text-[10px] text-gray-400 uppercase tracking-widest mb-6">Red Cross Youth Club</p>
+                <form class="space-y-4">
+                    <div id="register-fields" class="hidden space-y-4">
+                        <input type="text" placeholder="Full Name" class="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm outline-none focus:border-rcy">
+                    </div>
+                    <input type="text" placeholder="Email" class="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm outline-none focus:border-rcy">
+                    <input type="password" placeholder="Password" class="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl text-sm outline-none focus:border-rcy">
+                    <button type="button" onclick="handleAuth()" id="auth-submit-btn" class="w-full py-4 bg-gray-900 text-white font-black rounded-xl text-xs uppercase tracking-widest hover:bg-rcy transition-all">Log In</button>
+                </form>
+                <p class="mt-6 text-center text-xs text-gray-500">
+                    <span id="auth-switch-text">Don't have an account?</span> 
+                    <button onclick="toggleAuthMode()" id="auth-switch-btn" class="text-rcy font-bold ml-1 hover:underline">Register</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isLoggedIn = false;
+        let isLoginMode = true;
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active-page'));
+            
+            const targetPage = document.getElementById('page-' + pageId);
+            const targetNav = document.getElementById('nav-' + pageId);
+            
+            if(targetPage) targetPage.classList.add('active');
+            if(targetNav) targetNav.classList.add('active-page');
+
+            if(pageId === 'feedback') { updateFeedbackUI(); }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateFeedbackUI() {
+            const lockedDiv = document.getElementById('feedback-locked');
+            const formDiv = document.getElementById('feedback-form');
+            if (isLoggedIn) {
+                lockedDiv.classList.add('hidden');
+                formDiv.classList.remove('hidden');
+            } else {
+                lockedDiv.classList.remove('hidden');
+                formDiv.classList.add('hidden');
+            }
+        }
+
+        function openModal() { document.getElementById('authModal').classList.add('active'); }
+        function closeModal() { document.getElementById('authModal').classList.remove('active'); }
+
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            const title = document.getElementById('modal-title');
+            const submitBtn = document.getElementById('auth-submit-btn');
+            const switchText = document.getElementById('auth-switch-text');
+            const switchBtn = document.getElementById('auth-switch-btn');
+            const registerFields = document.getElementById('register-fields');
+
+            if (isLoginMode) {
+                title.innerText = "Portal Access";
+                submitBtn.innerText = "Log In";
+                switchText.innerText = "Don't have an account?";
+                switchBtn.innerText = "Register";
+                registerFields.classList.add('hidden');
+            } else {
+                title.innerText = "Join the Club";
+                submitBtn.innerText = "Create Account";
+                switchText.innerText = "Already a member?";
+                switchBtn.innerText = "Log In";
+                registerFields.classList.remove('hidden');
+            }
+        }
+
+        function handleAuth() {
+            isLoggedIn = true;
+            const portalBtn = document.getElementById('portalBtn');
+            portalBtn.innerText = "Logout";
+            portalBtn.onclick = handleLogout;
+            closeModal();
+            updateFeedbackUI();
+            alert(isLoginMode ? "Welcome back!" : "Account created successfully!");
+        }
+
+        function handleLogout() {
+            isLoggedIn = false;
+            const portalBtn = document.getElementById('portalBtn');
+            portalBtn.innerText = "Portal Login";
+            portalBtn.onclick = openModal;
+            updateFeedbackUI();
+            alert("You have logged out.");
+        }
+    </script>
+</body>
+</html>
+cdn.tailwindcss.com
