@@ -39,7 +39,6 @@
             cursor: pointer;
         }
 
-        /* Desktop Underline Effect */
         @media (min-width: 1024px) {
             .nav-link::after { 
                 content: ''; position: absolute; width: 0; height: 2px; 
@@ -55,13 +54,12 @@
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(14px);
             border-radius: 24px;
-            padding: 1.5rem; /* Mobile padding */
+            padding: 1.5rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.4);
         }
         @media (min-width: 768px) { .glass-card { padding: 3rem; } }
 
-        /* Responsive container padding */
         .content-container { padding-top: 2rem; padding-left: 1rem; padding-right: 1rem; }
         @media (min-width: 768px) { .content-container { padding-top: 4rem; padding-left: 1.5rem; padding-right: 1.5rem; } }
 
@@ -83,9 +81,6 @@
             padding: 1rem;
         }
         .modal.active { display: flex; }
-
-        /* Mobile Menu State */
-        #mobile-menu.hidden { display: none; }
     </style>
 </head>
 <body id="mainBody" class="min-h-screen">
@@ -134,13 +129,15 @@
     </nav>
 
     <main class="max-w-6xl mx-auto pb-10 md:pb-20">
+        
         <section id="page-home" class="page-content active content-container">
             <div class="glass-card">
                 <span class="text-rcy font-extrabold text-[10px] md:text-xs uppercase tracking-[0.2em]">Official Website</span>
                 <h2 class="text-2xl md:text-5xl font-extrabold text-gray-900 uppercase tracking-tight mt-1 leading-tight">Welcome to the <br>Red Cross Youth Club</h2>
                 <div class="h-1.5 w-12 md:w-16 bg-rcy mt-4 mb-6 md:mb-8"></div>
                 <p class="text-gray-700 text-base md:text-xl leading-relaxed max-w-2xl">
-                    The heart of volunteerism. Join the Red Cross Youth Club in our mission to save lives and lead with compassion.
+                   Red Cross Youth (RCY) functions as the youth arm of the Red Cross, aiming to educate and empower young people to serve their communities through humanitarian activities.
+                  Its roles include members, officers, advisers, and volunteers who work together to promote Red Cross principles, lead youth initiatives, and participate in disaster response, health education, and community service. 
                 </p>
             </div>
         </section>
@@ -148,11 +145,64 @@
         <section id="page-activities" class="page-content content-container">
             <div class="glass-card">
                 <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">What We Do</span>
-                <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Activities</h2>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Activities Gallery</h2>
                 <div class="h-1.5 w-16 bg-rcy mt-4 mb-8"></div>
-                <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-                    Stay tuned for our upcoming blood drives, first-aid training sessions, and community outreach programs. 
-                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/WDr40Gf.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">CLEANLINESS</h3>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/1YR55Jn.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">HAND WASHING</h3>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/CLr3Qf2.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">TEEN HEALTH CARAVAN</h3>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/buoXHmL.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">FIRST AID TRAINING</h3>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/eMGbzoW.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">FIRST AID TRAINING</h3>
+                        </div>
+                    </div>
+
+                    <div class="group overflow-hidden rounded-2xl bg-white border border-gray-100 hover:shadow-xl transition-all shadow-sm">
+                        <div class="h-52 overflow-hidden">
+                            <img src="https://i.imgur.com/al318yk.jpeg" alt="Activity" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h3 class="font-extrabold text-gray-900 uppercase text-xs">Fundraising Events</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -162,69 +212,131 @@
                 <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Mission & Vision</h2>
                 <div class="h-1.5 w-16 bg-rcy mt-4 mb-6 md:mb-10"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                     <div class="p-6 md:p-8 bg-white/60 border border-gray-100 rounded-2xl">
                         <h3 class="text-[10px] font-black text-rcy uppercase tracking-[0.3em] mb-4">The Mission</h3>
                         <p class="text-gray-700 text-sm md:text-base leading-relaxed font-medium">
-                            The Red Cross Youth Club will provide a sustained and effective humanitarian service committed to build resilient communities, ran by well-trained and dedicated staff and volunteers imbued with integrity, equipped with the necessary logistics and the maximum usage of information technology.
+                            The Red Cross Youth Club will provide a sustained and effective humanitarian service committed to build resilient communities...
                         </p>
                     </div>
                     <div class="p-6 md:p-8 bg-gray-900 text-white rounded-2xl shadow-xl">
                         <h3 class="text-[10px] font-black text-white/50 uppercase tracking-[0.3em] mb-4">The Vision</h3>
                         <p class="text-gray-200 text-sm md:text-base leading-relaxed font-medium italic">
-                            To be the foremost humanitarian organization ready to meet the challenges and capable of rapid delivery of humanitarian services in order to prevent and alleviate human suffering and uplift the dignity of the most vulnerable.
+                            To be the foremost humanitarian organization ready to meet the challenges and capable of rapid delivery...
                         </p>
                     </div>
                 </div>
             </div>
-        </section>
+<div class="glass-card my-12">
+    <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">What is Red Cross</span>
+    <div class="h-1.5 w-16 bg-rcy mt-4 mb-8 md:mb-12"></div>
 
-        <section id="page-officers" class="page-content content-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+        <div class="p-8 md:p-10 bg-white/70 border border-white/80 rounded-[2rem] shadow-xl mb-6">
+            <h3 class="text-[11px] font-black text-rcy uppercase tracking-[0.4em] mb-6">RED CROSS YOUTH LOGO</h3>
+            
+            <div class="space-y-6 text-gray-700 text-sm md:text-base leading-relaxed font-medium">
+                <p>
+                    Red Cross Youth logo has a big red cross in the middle. That red cross is a worldwide symbol of helping others. It shows that we are part of a global group that cares for people, especially during emergencies, disasters, or health problems.
+                </p>
+                
+                <p>
+                    Around the red cross, you’ll see a circle that says “Red Cross Youth” and “Philippine Red Cross.” This simply means that we are the youth branch of the Philippine Red Cross. We’re not just random volunteers. We belong to a recognized and trusted organization in the whole country.
+                </p>
+                
+                <p>
+                    The colors also have meaning. <span class="text-red-600 font-bold">Red</span> stands for action and bravery, like we’re ready to help anytime. <span class="text-gray-400 font-bold">White</span> means kindness and clean intentions because we serve without judging anyone. And the <span class="text-blue-600 font-bold">Blue</span> color represents trust and unity, just like our Philippine identity.
+                </p>
+                
+                <p>
+                    The shape of the cross, with equal sides, shows <strong>equality</strong>. It reminds us that everyone deserves help no matter who they are or where they come from. That’s what makes the logo so powerful and known everywhere.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center py-10">
+            <div class="relative group">
+                <div class="absolute inset-0 bg-white/40 blur-[80px] rounded-full scale-125"></div>
+                <img src="https://image2url.com/r2/default/images/1771571572708-bb0bafda-c790-4413-8dc4-3fb80a3f150d.jpg" 
+                     alt="RCY Logo" 
+                     class="relative w-64 md:w-80 h-auto drop-shadow-2xl transition-all duration-500 group-hover:scale-105">
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="page-officers" class="page-content content-container">
             <div class="glass-card">
                 <span class="text-rcy font-extrabold text-xs uppercase tracking-[0.2em]">Our Leaders</span>
                 <h2 class="text-2xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-tight mt-1">Club Officers</h2>
                 <div class="h-1.5 w-16 bg-rcy mt-4 mb-8 md:mb-12"></div>
 
-                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771557081148-3ce56fb0-06a5-4a65-b61a-e69ed1d7a598.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Adriel Singian</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">President</p>
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557081148-3ce56fb0-06a5-4a65-b61a-e69ed1d7a598.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Adriel Singian</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">President</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771640470631-cf900721-da87-4b19-9caf-96d83debd15e.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Colleen Patining</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Vice President</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640470631-cf900721-da87-4b19-9caf-96d83debd15e.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Colleen Patining</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Vice President</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771556813163-89051f32-6f06-42e9-a243-c5e9325a88da.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Nazarene Sumalinig</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">SECRETARY</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771556813163-89051f32-6f06-42e9-a243-c5e9325a88da.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Nazarene Sumalinig</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">SECRETARY</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771557019523-09e5961d-c1cb-4528-acf8-7e440375bfec.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Jairus Dejoras</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Asst. Secretary</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557019523-09e5961d-c1cb-4528-acf8-7e440375bfec.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jairus Dejoras</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Asst. Secretary</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771557053931-59554595-6462-4bb2-bbda-f8fd7be671f4.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Tanya Villiamor</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Grade Rep</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557053931-59554595-6462-4bb2-bbda-f8fd7be671f4.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Tanya Villiamor</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Grade Rep</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771557146596-0b7afa57-856e-461f-848b-32131bb339f2.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Princess Dino</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">PIO</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557146596-0b7afa57-856e-461f-848b-32131bb339f2.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Princess Dino</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">PIO</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://i.imgur.com/OKQI5mH.jpeg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Jhilianne T. Balanay</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Ass PIO</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://i.imgur.com/OKQI5mH.jpeg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jhilianne T. Balanay</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Ass PIO</p>
                     </div>
-                    <div class="officer-card p-4 md:p-5 border border-white rounded-2xl text-center">
-                        <img src="https://image2url.com/r2/default/images/1771640227940-a7ee8295-5652-41ab-bd2d-4d043b5ea1f8.jpg" class="w-16 h-16 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-3 md:mb-4 shadow-md">
-                        <h3 class="font-bold text-gray-900 text-[11px] md:text-sm">Fernando Wacal Jr.</h3>
-                        <p class="text-[8px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Auditor</p>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640227940-a7ee8295-5652-41ab-bd2d-4d043b5ea1f8.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Fernando Wacal Jr.</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Auditor</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640377827-810807dd-9a4b-484c-8213-53dd45fcb862.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Eukan Christoff Tinio</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">Asst. Treasurer</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557185239-755aefe4-bad1-4794-aba0-17d55dcd3789.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Jacy Plaza</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640035612-72bf32a7-9666-4c9d-b546-1e1c8232b5a0.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Alex Garcia</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771640434449-b94adc88-d195-43fc-9e6a-60ed58e2fd27.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Yanica Pamplona</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
+                    </div>
+                    <div class="officer-card p-5 border border-white rounded-2xl text-center">
+                        <img src="https://image2url.com/r2/default/images/1771557117721-25b55d2c-09ee-44c4-a6a8-02cd9d829fed.jpg" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-cover border-2 border-rcy mb-4 shadow-md">
+                        <h3 class="font-bold text-gray-900 text-sm">Amor Sulat</h3>
+                        <p class="text-[9px] md:text-[10px] text-rcy font-black uppercase tracking-widest">GRADE REP</p>
                     </div>
                 </div>
             </div>
@@ -368,5 +480,7 @@
             alert("You have logged out.");
         }
     </script>
+</body>
+</html>
 </body>
 </html>
